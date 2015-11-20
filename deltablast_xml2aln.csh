@@ -29,7 +29,7 @@ python parse_select_keep_all.py $2
 # Note, this also gets a description of the file
 # Code from launch-gi-to-fasta.com 
 
-python gi_to_fasta:.py $2-gi.out $2-fasta.out
+python gi2fasta.py $2-gi.out $2-fasta.out
 
 # Checks for and removes duplicate entries based on sequence
 # May not be needed as it appears blast doesn't return duplicate sequences
