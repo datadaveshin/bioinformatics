@@ -9,12 +9,12 @@
 # Trim the blast xml output using the supplied parse.inp file
 # Code from parse-launch2.com
 
-python deltablast-parse.py $1 $2
+python deltablast_parse.py $1 $2
 
 # Print out how many alignments after parsing
 # Code from parse-stats.com
 
-python deltablast-parse-stats.py $1
+python deltablast_parse_stats.py $1
 
 # Change directories into the results directory
 
@@ -23,20 +23,20 @@ cd $2-*_results
 # Gives the gi numbers in a single list so can use entrez to get the fasta files
 # Code from launch-parse-select-keep-all.com
 
-python parse-select-keep-all.py $2
+python parse_select_keep_all.py $2
 
 # Gets fasta files from gi numbers in the ###-gi.out list the results directory
 # Note, this also gets a description of the file
 # Code from launch-gi-to-fasta.com 
 
-python gi-to-fasta7.py $2-gi.out $2-fasta.out
+python gi_to_fasta:.py $2-gi.out $2-fasta.out
 
 # Checks for and removes duplicate entries based on sequence
 # May not be needed as it appears blast doesn't return duplicate sequences
 # Code from launch-remove-duplicates.com but updated the remove-duplicates python script
 # To remove searching for cysteines and glycosylation sites, that should be separate script
 
-python remove-duplicates-only.py $2-fasta.out $2-fasta
+python remove_duplicates_only.py $2-fasta.out $2-fasta
 
 # Add the original search fasta file to the top of the "kept" list
 
