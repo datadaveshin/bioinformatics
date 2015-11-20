@@ -1,0 +1,55 @@
+Input file for deltablast-parse.py
+The program is sensitive to the number of lines in this file,
+therefore, do not add or subtract any lines.
+To use, simply edit the default values below each question, and save.
+
+###################
+# Input file name #
+###################
+Enter input file name (supports wild cards for multiple runs):
+pepck
+
+##################### 
+# Search Parameters #
+#####################
+
+Enter high percent identity cutoff [0 - 100]:
+95
+
+Enter low percent identity cutoff [0 - 100]:
+60
+
+Enter high length percent cutoff [0 - 200]:
+115
+
+Enter low length percent cutoff [0 - 200]:
+85
+
+#############################
+# Output file name and type #
+#############################
+
+Enter an output file name root:
+95-60-115-85
+ 
+#######################################################
+# Outputs - normally, these do not need to be changed #
+#######################################################
+
+Write header? [Y,N]
+Y
+
+Write query file name and subject IDs? [Y/N]
+Y
+
+Write query and subject lengths, and percent coverage? [Y/N]
+Y
+
+Write number of identical residues and percent identity? [Y/N]
+Y
+
+Write alignment? [Y/N]
+Y
+
+Alignment output length (in characters):
+100
