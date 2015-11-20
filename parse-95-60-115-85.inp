@@ -7,7 +7,7 @@ To use, simply edit the default values below each question, and save.
 # Input file name #
 ###################
 Enter input file name (supports wild cards for multiple runs):
-pepck
+example_protein
 
 ##################### 
 # Search Parameters #
