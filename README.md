@@ -1,5 +1,5 @@
 # Bioinformatics
-###### Repository of shell and Python scripts for bioinformatics.
+###### Repository of Shell and Python scripts for Bioinformatics.
 
 ## Retrieve Full-Length .fasta Files following Deltablast and Generate a Clustal Alignment
 ##### deltablast_xml2aln.csh 
