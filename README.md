@@ -7,7 +7,7 @@ deltablast_xml2aln.csh takes .xml deltablast output from NCBI's site, fetches fu
 
 ##### Dependencies/Requirements: 
 1. Python 2.7
-2. The Biopython module
+2. The Biopython Python module
 3. A local copy of clustal O on your computer
 
 ## Protein Motif, Site Finder and Statistics from an Alignment
@@ -16,5 +16,3 @@ pattern_finder.py takes your clustal alignment and a motif pattern to search for
 
 ##### Dependencies/Requirements: 
 1. Python 2.7
-2. The Biopython module
-3. A local copy of clustal O on your computer
