@@ -23,20 +23,20 @@ cd $2-*_results
 # Gives the gi numbers in a single list so can use entrez to get the fasta files
 # Code from launch-parse-select-keep-all.com
 
-python parse_select_keep_all.py $2
+python ../parse_select_keep_all.py $2
 
 # Gets fasta files from gi numbers in the ###-gi.out list the results directory
 # Note, this also gets a description of the file
 # Code from launch-gi-to-fasta.com 
 
-python gi2fasta.py $2-gi.out $2-fasta.out
+python ../gi2fasta.py $2-gi.out $2-fasta.out
 
 # Checks for and removes duplicate entries based on sequence
 # May not be needed as it appears blast doesn't return duplicate sequences
 # Code from launch-remove-duplicates.com but updated the remove-duplicates python script
 # To remove searching for cysteines and glycosylation sites, that should be separate script
 
-python remove_duplicates_only.py $2-fasta.out $2-fasta
+python ../remove_duplicates_only.py $2-fasta.out $2-fasta
 
 # Add the original search fasta file to the top of the "kept" list
 
