@@ -441,26 +441,29 @@ def run_it(input_file, input_pattern, output_style):
     # Output stats
     result_stats(top_seq_obj, seq_obj_lst)
 
+def help_message():
+    print ('\nUsage: protein_find_sites.py -i <input_file> -p <pattern> '
+                   '-s <output_style> -o <output_file>\n')
+    print "Pattern options are:"
+    print '"cys" for cysteine'
+    print '"nglyc" for n-glycosylation \n'
 
 def main(argv):
     input_file = ''
     search_pattern = ''
     output_style = ''
     output_file = ''
+    if len(argv) == 0:
+        help_message()
     try:
         opts, args = getopt.getopt(argv, "hi:p:s:o:", ["ifile=", "ipattern",
                                                        "ostyle=", "ofile="])
     except getopt.GetoptError:
-        print ('usage: protein_find_sites.py -i <input_file> -p <pattern> '
-               '-s <output_style> -o <output_file>')
+        help_message()
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print ('\nUsage: protein_find_sites.py -i <input_file> -p <pattern> '
-                   '-s <output_style> -o <output_file>\n')
-            print "Pattern options are:"
-            print '"cys" for cysteine'
-            print '"nglyc" for n-glycosylation \n'
+            help_message()
             sys.exit()
         elif opt in ("-i", "--ifile"):
             input_file = arg
