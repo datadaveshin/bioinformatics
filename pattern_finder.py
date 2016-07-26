@@ -128,14 +128,8 @@ class Clustal_alignment_sequence:
         string (though we could just add it directly to the object)
         """
 
-
-        ###########################################
         # Flatten the alignment position list with list comprehension:
         flat_pos_list = [tup for sub_list in replacement_list for tup in sub_list]
-
-        # Flatten the alignment position list with reduce lambda function:
-        # flat_pos_list = reduce(lambda x, y: x + y, replacement_list)
-        ###########################################
         
         # Replace dashes with amino acids using thier associated positions
         for pattern_tup in flat_pos_list:
@@ -175,33 +169,12 @@ class Clustal_alignment_sequence:
         match_obj = re.finditer(pattern[1], self.seq)
 
         # End with a list of matches called match_list:
-        ###########################
-        # Using list comprehension:
-        ###########################
         # Make list of matches with starting positions from the match object:
         self.match_list = [(match.group(), match.start()) for match in match_obj]
         # Expanded each match so each amino acid has a position assigned to it:
         self.seq_match_pos_list = [self.get_ind_positions(match) for match in self.match_list]
         # Convert the amino acid/position list to match the aln seq:
         self.aln_match_pos_list = [self.filt_to_orig(item) for item in self.seq_match_pos_list]
-        ###########################
-        
-        #############################
-        # Using map lambda functions:
-        #############################
-        # # Make list of matches with starting positions from the match object:
-        # self.match_list = map(lambda matcc: 
-        #                       (matcc.group(), matcc.start()), 
-        #                       match_obj)
-        # # Expanded each match so each amino acid has a position assigned to it:
-        # self.seq_match_pos_list = map(lambda match_tuple:
-        #                               self.get_ind_positions(match_tuple), 
-        #                               self.match_list)
-        # # Convert the amino acid/position list to match the aln seq:
-        # self.aln_match_pos_list = map(lambda inner_array: 
-        #                          self.filt_to_orig(inner_array),
-        #                          self.seq_match_pos_list)
-        #############################
 
         # Generate the pattern alignment string that is mapped to the alignment str
         # Build the string of dashes as input and send
@@ -409,8 +382,7 @@ def result_stats(parent_aln_obj, aln_obj_lst):
         for item in sorted_false_matches:
             print item[0] + ":", item[1], "occurences" 
         print ""
-        # print "false_match_dict", false_match_dict
-        
+        # print "false_match_dict", false_match_dict  
         # Update the match count.
         match_count += 1
 
