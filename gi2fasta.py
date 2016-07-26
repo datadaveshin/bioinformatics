@@ -1,7 +1,13 @@
 import sys
-from Bio import Entrez
-from Bio import SeqIO
-Entrez.email = "davidsshin@lbl.gov"
+#from Bio import Entrez
+#from Bio import SeqIO
+
+user_email = "" # User must supply email here to access NCBI api
+# Add error message in the event no email address is supplied 
+if user_email == "":
+    sys.exit("Error: Please supply your email address to line 5 of gi2fasta.py")
+
+Entrez.email = user_email
 
 infilename = sys.argv[1]
 outfilename = sys.argv[2]
